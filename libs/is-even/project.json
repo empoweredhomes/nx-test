@@ -1,0 +1,40 @@
+{
+  "name": "is-even",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "is-even/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/is-even",
+        "main": "is-even/src/index.ts",
+        "tsConfig": "is-even/tsconfig.lib.json",
+        "assets": ["is-even/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["is-even/**/*.ts", "is-even/package.json"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "is-even/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    }
+  },
+  "tags": []
+}
