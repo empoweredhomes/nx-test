@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@mysa/is-even": ["libs/is-even/src/index.ts"],
       "@y/is-even": ["is-even/src/index.ts"]
     }
   },
