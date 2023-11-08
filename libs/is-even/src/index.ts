@@ -1,4 +1,1 @@
-export function isEven(x: number): boolean {
-    return x % 2 === 0;
-  }
-  
+export * from './lib/is-even';
